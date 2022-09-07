@@ -1,1 +1,19 @@
-<div id="root"></div>
+<!DOCTYPE html>
+
+<head>
+    <title>Connect v2 UI</title>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } 
+        else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+<body>
+    <noscript>Javascript is required to run this application</noscript>
+    <div id="root"></div>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+</body>
