@@ -9,7 +9,7 @@
 - run `npm start`
 - view in browser at `localhost:3000`
 
-### Edit on Stackblitz
+### Edit on Stackblitz (experimental & buggy)
 
 - [fork and edit here](https://stackblitz.com/edit/react-3iqut5?file=src/pages/dashboard/dashboard.js)
 
