@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { darkMode,user } from "../../atoms"
+import { darkMode,userState } from "../../atoms"
 
 /** Contains the user icon, dark mode toggle and search bar toggle
  * 
@@ -7,7 +7,7 @@ import { darkMode,user } from "../../atoms"
  */
 const Header = () => {
     const [theme,setTheme] = useRecoilState(darkMode)
-    const [currentUser,setUser] = useRecoilState(user)
+    const [user,setUser] = useRecoilState(userState)
 
     // sets document theme to dark if not yet set
     if(theme === 'dark'){
@@ -15,7 +15,7 @@ const Header = () => {
     }
 
     return (
-        <div className='w-screen flex justify-end'>
+        <div className='flex justify-end'>
                 <div className='my-auto'>
                     <button 
                         className='rounded-full bg-gray-400 dark:bg-indigo-900 h-fit my-auto text-gray-200 p-1'
@@ -56,7 +56,7 @@ const Header = () => {
                     
                     <div className='text-gray-800 dark:text-gray-200 text-center px-3'>
                         <img src="https://via.placeholder.com/50" className='rounded-full mx-auto'/>
-                        <p className='py-2'>{currentUser.first} {currentUser.last}</p>
+                        <p className='py-2'>{user.first} {user.last}</p>
                         <hr className='border-2 border-solid border-gray-100 rounded'/>
                         <p className='py-2 hover:text-gray-400 cursor-pointer'>view profile</p>
                         <hr className='border-2 border-solid border-gray-100 rounded'/>

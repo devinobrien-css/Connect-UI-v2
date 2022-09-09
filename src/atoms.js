@@ -20,11 +20,20 @@ export const darkMode = atom({
 
 /** User Atom - holds credentials of currently logged in user
  */
-export const user = atom({
-    key: 'user',
+export const userState = atom({
+    key: 'userState',
     default: {
-        first:'Devin',
-        last:'OBrien'
+        "first":"Devin",
+        "last":"O'Brien"
     },
+    effects_UNSTABLE: [persistAtom],
+});
+
+
+/** Dashboard Post State Atom - holds currently viewed posts
+ */
+ export const dashboardPostState = atom({
+    key: 'postState',
+    default: 'recents',
     effects_UNSTABLE: [persistAtom],
 });

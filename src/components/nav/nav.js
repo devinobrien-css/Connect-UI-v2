@@ -5,7 +5,7 @@ import { jahnelLogo,dashboardLogo,exploreLogo } from "./logos";
 /** Holds redundant styling for navigation components
  */
 const styles = {
-    'nav-button':'text-white hover:bg-gray-600 p-1 rounded h-fit  p-3',
+    'nav-button':'text-white hover:bg-gray-600 rounded h-fit  p-2 mx-auto',
     'nav-tooltip':'shadow-lg inline-block absolute invisible z-10 py-2 transform-x-4 px-3 text-sm font-medium text-white bg-gray-700 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-600'
 }
 
@@ -28,7 +28,7 @@ const Nav = () => {
     }
 
     return (
-        <nav className="absolute left-0 bg-gray-800 flex flex-col min-h-screen p-4">
+        <nav className="w-1/12 bg-gray-800 flex flex-col min-h-screen p-4">
             <div className='mx-auto'>
                 {jahnelLogo}
             </div>

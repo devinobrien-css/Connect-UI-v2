@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil";
 import { pageState } from '../../atoms.js'
 import Dashboard from "../../pages/dashboard/dashboard.js";
+import Header from '../header/header'
 
 /** Renders the requested page
  * 
@@ -27,7 +28,8 @@ const ContentRouter = () => {
     const [page,setPage] = useRecoilState(pageState)
 
     return (
-        <div className='absolute right-0 w-8/12 mr-10 md:w-10/12 lg:w-11/12 lg:mr-4 md:mr-8 p-2 transition-all'>
+        <div className='w-11/12 p-2 transition-all h-full overflow-scroll'>
+            <Header />
             <GeneratePage page={page}/>
         </div>
     )
