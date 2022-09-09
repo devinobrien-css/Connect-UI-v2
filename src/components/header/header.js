@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <div className="flex justify-end">
-      <div className="m-auto h-fit">
+      <div className="my-auto h-fit">
         <button
           className="block"
           onClick={() => {
