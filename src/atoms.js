@@ -32,8 +32,15 @@ export const userState = atom({
 
 /** Dashboard Post State Atom - holds currently viewed posts
  */
- export const dashboardPostState = atom({
+export const dashboardPostState = atom({
     key: 'postState',
     default: 'recents',
+    effects_UNSTABLE: [persistAtom],
+});
+
+
+export const dashboardState = atom({
+    key: 'dashboardState',
+    default: 'home',
     effects_UNSTABLE: [persistAtom],
 });
