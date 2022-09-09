@@ -5,7 +5,7 @@ import { HomeIcon, PopularIcon } from './dashboard_icons.js';
 
 const PortalNav = () => {
   const textStyles =
-    'text-xl m-auto font-sans dark:text-gray-400 cursor-pointer hover:text-gray-500 hover:underline whitespace-nowrap';
+    'text-xl m-auto font-sans dark:text-gray-400 cursor-pointer hover:text-gray-500 whitespace-nowrap';
 
   return (
     <div className="">
