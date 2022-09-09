@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { dashboardPostState } from '../../atoms';
+import { HomeIcon, PopularIcon } from './dashboard_icons.js';
 
 const PortalNav = () => {
   const textStyles =
-    'py-1 text-gray-400 text-mono cursor-pointer hover:text-gray-500 hover:underline';
+    'text-xl m-auto font-sans dark:text-gray-400 cursor-pointer hover:text-gray-500 hover:underline whitespace-nowrap';
 
   return (
-    <div className="flex-none w-1/4">
-      <div className="h-min max-h-min dark:bg-gray-600 px-6 rounded-lg dark:border-transparent shadow-lg">
-        <div className="py-2">
-          <p className={textStyles}>Home</p>
-          <p className={textStyles}>Mentions</p>
-          <p className={textStyles}>All Posts</p>
-          <p className={textStyles}>Your Posts</p>
+    <div className="">
+      <div className="h-min max-h-min dark:bg-gray-600 rounded-lg dark:border-transparent  mr-4">
+        <div className="py-2 pr-4 pl-2 mr-4">
+          <div className="flex py-2 group hover:bg-gray-300 cursor-pointer">
+            {HomeIcon}
+            <p className={textStyles}> Home</p>
+          </div>
+          <div className="flex py-2">
+            {PopularIcon}
+            <p className={textStyles}> Popular</p>
+          </div>
+          <div className="flex py-2">
+            {PopularIcon}
+            <p className={textStyles}> Mentions</p>
+          </div>
         </div>
         <hr className="border-gray-700" />
-        <div className="py-2">
+        <div className="py-2 p-4 mr-4">
           <p className={textStyles}>u/thread 1</p>
           <p className={textStyles}>u/thread 2</p>
           <p className={textStyles}>u/thread 3</p>
@@ -192,7 +201,7 @@ const PortalAds = () => {
   ];
 
   return (
-    <div className="flex-1 w-1/2 mx-4">
+    <div className="flex-1 mx-4">
       {people.map((post, index) => {
         console.log(post);
         return (
@@ -207,10 +216,12 @@ const PortalAds = () => {
 
 const DashboardPortal = () => {
   return (
-    <div className="my-4 flex">
+    <div className="my-4 flex flex-row no-wrap">
       <PortalNav />
-      <PortalPostDirectory />
-      <PortalAds />
+      <div className="grow-0 w-1/2 border-2 border-gray-300">
+        {/* <PortalPostDirectory /> */}
+        {/* <PortalAds /> */}
+      </div>
     </div>
   );
 };

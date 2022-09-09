@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { darkMode, userState } from '../../atoms';
 
@@ -11,16 +11,18 @@ const Header = () => {
   const [user, setUser] = useRecoilState(userState);
 
   // sets document theme to dark if not yet set
-  if (theme === 'dark') {
+  useEffect(() => {
     document.documentElement.classList.add('dark');
-  }
+    setTheme('dark');
+  }, []);
 
   return (
     <div className="flex justify-end">
-      <div className="my-auto">
+      <div className="m-auto h-fit">
         <button
-          className="rounded-full bg-gray-400 dark:bg-indigo-900 h-fit my-auto text-gray-200 p-1"
+          className="block"
           onClick={() => {
+            console.log(theme);
             if (theme === 'dark') {
               document.documentElement.classList.remove('dark');
               setTheme('light');

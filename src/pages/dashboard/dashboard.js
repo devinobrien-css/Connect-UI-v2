@@ -12,10 +12,8 @@ const DashboardHeader = () => {
 
   console.log(user);
   return (
-    <div className="bg-gray-900 rounded-2xl w-full py-3 px-2">
-      <p className="text-gray-100 text-2xl rounded-2xl dark:text-gray-200">
-        Hello there, {user.first}
-      </p>
+    <div className="bg-gray-900 rounded w-full p-4">
+      <p className="text-gray-200 text-4xl">Hello there, {user.first}</p>
     </div>
   );
 };
