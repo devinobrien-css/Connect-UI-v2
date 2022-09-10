@@ -1,4 +1,4 @@
-# Connect with React and TailwindCSS
+# Practice with React and TailwindCSS
 
 ## Execution Instructions
 
