@@ -29,7 +29,7 @@ const Nav = () => {
   }
 
   return (
-    <nav className="w-1/12 bg-gray-800 flex flex-col min-h-screen p-4">
+    <nav className="w-1/12 max-w-20 bg-gray-800 flex flex-col min-h-screen p-4">
       <div className="mx-auto">{jahnelLogo}</div>
 
       <button

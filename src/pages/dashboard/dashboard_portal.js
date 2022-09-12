@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { selector, useRecoilState } from 'recoil';
 import { dashboardPostState,dashboardState } from '../../atoms';
-import { HomeIcon, PopularIcon, MentionsIcon } from './dashboard_icons.js';
+import { HomeIcon, PopularIcon, MentionsIcon, GroupsIcon, LikeIcon, CommentIcon } from './dashboard_icons.js';
 
 import { Get } from '../../access/access'
 
@@ -28,6 +28,12 @@ const PortalNav = () => {
           }}>
             {HomeIcon}
             <p className={styles['textStyles']}>Home</p>
+          </div>
+          <div className={styles['buttonStyles'] + isSelectedView('groups')} onClick={() => {
+            setPortalState('groups')
+          }}>
+            {GroupsIcon}
+            <p className={styles['textStyles']}>Groups</p>
           </div>
           <div className={styles['buttonStyles'] + isSelectedView('popular')} onClick={() => {
             setPortalState('popular')
@@ -214,6 +220,16 @@ const PortalPostDirectory = () => {
               <p className="font-bold dark:text-gray-300">{post.title}</p>
               <p className="py-2 dark:text-gray-300">{post.content}</p>
             </div>
+            <div className="flex">
+              <div className="mr-8 flex">
+                {CommentIcon}
+                <p className="dark:text-gray-300 pl-1 m-auto">3</p>
+              </div>
+              <div className="flex">
+                {LikeIcon}
+                <p className="dark:text-gray-300 pl-1 m-auto">24</p>
+              </div>
+            </div>
           </div>
         );
       })}
@@ -228,20 +244,19 @@ const UsersAd = () => {
     <div className="mx-4 bg-gray-100 dark:bg-gray-400 p-2 rounded-lg ">
       <p className="text-lg">Join a Group</p>
       {
-        Get('groups').map((post, index) => {
-          console.log(post);
+        Get('groups').map((group, index) => {
           return (
             <div key={index} className="py-1 shadow-sm">
               
               <div className="flex justify-between">
                 <div className="flex"> 
-                  <img src={post.img}  className="my-auto rounded-full"/>
+                  <img src={group.img}  className="my-auto rounded-full"/>
                   <div className="my-auto ml-2 cursor-pointer">
-                    <p className="">{post.name}</p>
-                    <p className="text-sm text-gray-700 italic">{post.members.length} {post.members.length === 1 ? 'member' : 'members'}</p>
+                    <p className="">{group.name}</p>
+                    <p className="text-sm text-gray-700 italic">{group.members.length} {group.members.length === 1 ? 'member' : 'members'}</p>
                   </div>
                 </div>
-                <p className=" cursor-pointer my-auto rounded-2xl border-2 border-gray-100 bg-gray-100 dark:border-gray-500 dark:bg-gray-500 hover:text-gray-800 p-1 text-gray-300">+ join</p>
+                <p className=" cursor-pointer my-auto rounded-2xl border-2 border-gray-100 bg-gray-100 dark:border-gray-500 dark:bg-gray-500 dark:hover:text-gray-800 hover:text-gray-800 p-1 text-gray-400 dark:text-gray-400">+ join</p>
               </div>
             </div>
           );

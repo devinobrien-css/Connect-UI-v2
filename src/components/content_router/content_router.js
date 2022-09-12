@@ -27,7 +27,7 @@ const ContentRouter = () => {
   const [page, setPage] = useRecoilState(pageState);
 
   return (
-    <div className="w-full px-2 transition-all flex flex-col items-top justify-top h-screen">
+    <div className="w-full px-2 transition-all mx-2 flex flex-col items-top justify-top h-screen">
         <Header />
         <GeneratePage page={page} />
     </div>
